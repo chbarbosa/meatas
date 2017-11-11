@@ -16,7 +16,7 @@ export const ROUTES: Routes = [
         children: [
             {path: '', redirectTo: 'menu', pathMatch: 'full'},
             {path: 'menu', component: MenuComponent},
-            {path: 'review', component: ReviewsComponent}
+            {path: 'reviews', component: ReviewsComponent}
         ]
     }
 ]
