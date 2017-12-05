@@ -11,6 +11,8 @@ import { RadionOption } from './../shared/radio/radionOption-model';
 })
 export class OrderComponent implements OnInit {
 
+  delivery: number = 8;
+
   paymentOptions: RadionOption[] = [
     {label: 'Dinheiro', value: 'MON'},
     {label: 'Cartão de Débito', value: 'DEB'},
@@ -20,6 +22,10 @@ export class OrderComponent implements OnInit {
   constructor(private orderService: OrderService) { }
 
   ngOnInit() {
+  }
+
+  itemsValue(): number {
+    return this.orderService.itemsValue();
   }
 
   cartItems():CartItem[]{
