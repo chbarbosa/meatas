@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
 
 import { OrderService } from './order.service';
 import { RadionOption } from './../shared/radio/radionOption-model';
@@ -41,7 +41,21 @@ export class OrderComponent implements OnInit {
       number: ['',[Validators.required, Validators.pattern(this.numberPattern)]],
       optionalAddress: '',
       paymentOption: ['', Validators.required]
-    });
+    }, {validator: OrderComponent.equalsTo});
+  }
+
+  static equalsTo(group: AbstractControl): {[key:string]: boolean} {
+    const email = group.get('email');
+    const emailConfirmation = group.get('emailConfirmation');
+    console.log(email.value );
+    console.log(emailConfirmation.value );
+    if (!email || !emailConfirmation) {
+      return undefined;
+    }
+    if (email.value !== emailConfirmation.value) {
+      return {emailsNotMatch:true};
+    }
+    return undefined;
   }
 
   itemsValue(): number {
