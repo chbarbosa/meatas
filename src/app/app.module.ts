@@ -14,14 +14,11 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
 import { RestaurantsService } from './restaurants/restaurants.service';
 import { DetalheRestaurantComponent } from './detalhe-restaurant/detalhe-restaurant.component';
 import { MenuComponent } from './detalhe-restaurant/menu/menu.component';
-import { ShoppingCartComponent } from './detalhe-restaurant/shopping-cart/shopping-cart.component';
 import { MenuItemComponent } from './detalhe-restaurant/menu-item/menu-item.component';
-import { ReviewsComponent } from './detalhe-restaurant/reviews/reviews.component';
-import { OrderComponent } from './order/order.component';
-import { ShoppingCartService } from './detalhe-restaurant/shopping-cart/shopping-cart.service';
-import { OrderItemsComponent } from './order/order-items/order-items.component';
-import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { ReviewsComponent } from './detalhe-restaurant/reviews/reviews.component';
+import { ShoppingCartComponent } from './detalhe-restaurant/shopping-cart/shopping-cart.component';
+import { ShoppingCartService } from './detalhe-restaurant/shopping-cart/shopping-cart.service';
 import { SharedModule } from './shared/shared.module';
 import { OrderService } from './order/order.service';
 
@@ -38,9 +35,6 @@ import { OrderService } from './order/order.service';
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderComponent,
-    OrderItemsComponent,
-    DeliveryCostsComponent,
     OrderSummaryComponent
   ],
   imports: [

@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { DetalheRestaurantComponent } from './detalhe-restaurant/detalhe-restaurant.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
-import { OrderComponent } from './order/order.component';
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
@@ -20,6 +19,6 @@ export const ROUTES: Routes = [
             {path: 'reviews', component: ReviewsComponent}
         ]
     },
-    {path: 'order', component: OrderComponent},
+    {path: 'order', loadChildren: './order/order.module#OrderModule'},
     {path: 'order-summary', component: OrderSummaryComponent}
 ]
