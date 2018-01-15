@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 
-import { ReviewsComponent } from './detalhe-restaurant/reviews/reviews.component';
-import { MenuComponent } from './detalhe-restaurant/menu/menu.component';
-import { HomeComponent } from './home/home.component';
-import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { DetalheRestaurantComponent } from './detalhe-restaurant/detalhe-restaurant.component';
+import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './detalhe-restaurant/menu/menu.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { ReviewsComponent } from './detalhe-restaurant/reviews/reviews.component';
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
@@ -20,5 +21,6 @@ export const ROUTES: Routes = [
         ]
     },
     {path: 'order', loadChildren: './order/order.module#OrderModule'},
-    {path: 'order-summary', component: OrderSummaryComponent}
+    {path: 'order-summary', component: OrderSummaryComponent},
+    {path: '**', component: NotFoundComponent}
 ]

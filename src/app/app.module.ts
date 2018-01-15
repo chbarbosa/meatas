@@ -19,6 +19,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { ReviewsComponent } from './detalhe-restaurant/reviews/reviews.component';
 import { ShoppingCartComponent } from './detalhe-restaurant/shopping-cart/shopping-cart.component';
 import { SharedModule } from './shared/shared.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SharedModule } from './shared/shared.module';
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
