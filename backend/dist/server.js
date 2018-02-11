@@ -2,6 +2,7 @@
 exports.__esModule = true;
 var jsonServer = require("json-server");
 var auth_1 = require("./auth");
+var authz_1 = require("./authz");
 var fs = require("fs");
 var https = require("https");
 var server = jsonServer.create();
@@ -14,6 +15,8 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 //middleware para login
 server.post('/login', auth_1.handleAuthentication);
+//middleware para 
+server.use('/orders', authz_1.handleAuthorization);
 // Use default router
 server.use(router);
 var options = {
