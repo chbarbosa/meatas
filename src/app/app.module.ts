@@ -21,6 +21,7 @@ import { ReviewsComponent } from './detalhe-restaurant/reviews/reviews.component
 import { ShoppingCartComponent } from './detalhe-restaurant/shopping-cart/shopping-cart.component';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderSummaryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
