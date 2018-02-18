@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { User } from './../../../../backend/users';
 import { MEAT_API } from './../../app.api';
+import { User } from './user.model';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do'
