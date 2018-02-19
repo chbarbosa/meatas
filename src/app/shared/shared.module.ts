@@ -7,6 +7,7 @@ import { RatingComponent } from './rating/rating.component';
 import { RadioComponent } from './radio/radio.component';
 
 import { LoginService } from './../security/login/login.service';
+import { LoggedInGuard } from './../security/loggedin.guard';
 import { NotificationService } from './messages/notification.service';
 import { OrderService } from './../order/order.service';
 import { RestaurantsService } from './../restaurants/restaurants.service';
@@ -44,7 +45,8 @@ export class SharedModule{
                         ShoppingCartService, 
                         RestaurantsService, 
                         NotificationService, 
-                        OrderService]
+                        OrderService,
+                        LoggedInGuard]
         }
     }
 }
