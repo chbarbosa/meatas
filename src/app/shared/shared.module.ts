@@ -6,6 +6,7 @@ import { InputComponent } from './input/input.component';
 import { RatingComponent } from './rating/rating.component';
 import { RadioComponent } from './radio/radio.component';
 
+import { LeaveOrderGuard } from './../order/leave-order.guard';
 import { LoginService } from './../security/login/login.service';
 import { LoggedInGuard } from './../security/loggedin.guard';
 import { NotificationService } from './messages/notification.service';
@@ -46,7 +47,8 @@ export class SharedModule{
                         RestaurantsService, 
                         NotificationService, 
                         OrderService,
-                        LoggedInGuard]
+                        LoggedInGuard,
+                        LeaveOrderGuard]
         }
     }
 }

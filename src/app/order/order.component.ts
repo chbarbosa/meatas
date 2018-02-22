@@ -7,6 +7,8 @@ import { Order, OrderItem } from "app/order/order.model";
 import { CartItem } from './../detalhe-restaurant/shopping-cart/cart-item.model';
 import { Router } from "@angular/router";
 
+import 'rxjs/add/operator/do' 
+
 @Component({
   selector: 'mt-order',
   templateUrl: './order.component.html',
@@ -21,6 +23,8 @@ export class OrderComponent implements OnInit {
   orderForm: FormGroup;
 
   delivery: number = 8;
+
+  orderId: string
 
   paymentOptions: RadionOption[] = [
     {label: 'Dinheiro', value: 'MON'},
@@ -81,11 +85,14 @@ export class OrderComponent implements OnInit {
   checkOrder(order: Order){
     order.orderItems = this.cartItems()
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
-    this.orderService.checkOrder(order).subscribe(
-      (orderId: string) => {
+    this.orderService.checkOrder(order)
+      .do((orderId: string) => this.orderId = orderId)
+      .subscribe((orderId: string) => {
         this.router.navigate(['/order-summary']);
         this.orderService.clear();
       });
-    console.log(order);
+  }
+  isOrderCompleted(): boolean {
+    return this.orderId !== undefined
   }
 }
