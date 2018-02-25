@@ -1,11 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { InputComponent } from './input/input.component';
 import { RatingComponent } from './rating/rating.component';
 import { RadioComponent } from './radio/radio.component';
 
+import { AuthInterceptor } from './../security/auth.interceptor';
 import { LeaveOrderGuard } from './../order/leave-order.guard';
 import { LoginService } from './../security/login/login.service';
 import { LoggedInGuard } from './../security/loggedin.guard';
@@ -48,7 +50,9 @@ export class SharedModule{
                         NotificationService, 
                         OrderService,
                         LoggedInGuard,
-                        LeaveOrderGuard]
+                        LeaveOrderGuard,
+                        {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+                    ]
         }
     }
 }
