@@ -1,5 +1,10 @@
 # Meat - Angular App Starter
 
+# Extra
+
+'nodemon --watch backend backend/dist/server.js'
+veja os usuários no banco
+
 ## 1. Passos para começar
 
 ### Clonando o Repositório
