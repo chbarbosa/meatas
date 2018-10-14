@@ -25,8 +25,7 @@ import { Observable } from "rxjs/Observable";
       })),
       state('visible', style({
         opacity: 1,
-        "max-height": "70px",
-        "marging-top": "20px"
+        "max-height": "70px"
       })),
       transition('* => *', animate('250ms 0s ease-in-out'))
     ])
