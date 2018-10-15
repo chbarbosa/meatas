@@ -1,12 +1,14 @@
 import { User } from './../../../backend/users';
 import { LoginService } from './../security/login/login.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
 import { ShoppingCartService } from './../detalhe-restaurant/shopping-cart/shopping-cart.service';
 import { Order } from "app/order/order.model";
 import { CartItem } from './../detalhe-restaurant/shopping-cart/cart-item.model';
+
+import { map } from 'rxjs/operators';
 
 import { MEAT_API } from './../app.api';
 
@@ -40,7 +42,9 @@ export class OrderService{
     checkOrder(order: Order): Observable<String>{
 
         return this.http.post<Order>(`${MEAT_API}/orders`, order)
-                                .map(order => order.id);
+        .pipe(
+            map(order => order.id)
+        )
     }
     clear(){
         this.cartService.clear();
